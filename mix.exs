@@ -39,14 +39,6 @@ defmodule ArgyleWerewolf.MixProject do
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
-      {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
-      {:heroicons,
-       github: "tailwindlabs/heroicons",
-       tag: "v2.1.1",
-       sparse: "optimized",
-       app: false,
-       compile: false,
-       depth: 1},
       {:swoosh, "~> 1.5"},
       {:finch, "~> 0.13"},
       {:telemetry_metrics, "~> 1.0"},
@@ -67,10 +59,9 @@ defmodule ArgyleWerewolf.MixProject do
   defp aliases do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
-      "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind argyle_werewolf", "esbuild argyle_werewolf"],
+      "assets.setup": ["esbuild.install --if-missing"],
+      "assets.build": ["esbuild argyle_werewolf"],
       "assets.deploy": [
-        "tailwind argyle_werewolf --minify",
         "esbuild argyle_werewolf --minify",
         "phx.digest"
       ]
