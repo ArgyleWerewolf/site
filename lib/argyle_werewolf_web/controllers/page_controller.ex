@@ -2,8 +2,6 @@ defmodule ArgyleWerewolfWeb.PageController do
   use ArgyleWerewolfWeb, :controller
 
   def home(conn, _params) do
-    # The home page is often custom made,
-    # so skip the default app layout.
-    render(conn, :home, layout: false)
+    render(conn |> assign(:page_title, "angela quinton"), :home)
   end
 end

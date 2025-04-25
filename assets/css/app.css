@@ -1,1 +1,502 @@
-/* This file is for your main application CSS */
+/* No Tailwind for this, thanks. */
+:root {
+  --bg-color: darkslateblue;
+  --text-color: white;
+  --font-family-copy: Courier, monospace;
+  --font-family-heading: Courier, monospace;
+}
+
+[data-theme="assert"] {
+  --bg-color: greenyellow;
+  --text-color: midnightblue;
+  --font-family-copy: "Roboto Mono", monospace;
+  --font-family-heading: "Helvetica Neue", Helvetica, Arial;
+}
+
+.theme-switch#default {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-family: Courier, monospace;
+}
+
+.theme-switch#assert {
+  border: 1px solid greenyellow;
+  background-color: greenyellow;
+  color: midnightblue;
+  font-family: "Helvetica Neue", Helvetica, Arial;
+}
+
+.theme-switch {
+  cursor: pointer;
+}
+
+.theme-switch.active {
+  opacity: 0.7;
+  cursor: default;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family-copy);
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 42px;
+  margin-top: 8px;
+  font-family: var(--font-family-heading);
+}
+
+a:link {
+  color: white;
+  font-weight: 600;
+}
+
+a:visited {
+  color: violet;
+}
+
+dt {
+  padding-top: 16px;
+  font-weight: 600;
+}
+
+img {
+  width: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+.wrapper {
+  margin: 20px;
+}
+
+#theme-control {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+.left,
+.right {
+  width: 100%;
+}
+
+.right {
+  padding-bottom: 30px;
+}
+
+.image-container {
+  margin: 0 0 40px 0;
+  position: relative;
+  width: 280px;
+  height: 335px;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+}
+
+.image-credit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -30px;
+  text-align: center;
+  font-size: 11px;
+  color: rebeccapurple;
+  opacity: 0.4;
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    margin: 50px auto;
+    width: 900px;
+  }
+
+  .left {
+    float: left;
+    width: 320px;
+    padding-right: 60px;
+    text-align: right;
+  }
+
+  .right {
+    float: left;
+    width: 520px;
+  }
+
+  .image-container {
+    margin: 0 auto;
+  }
+}
+
+.image-human {
+  animation: glitch-human 15s linear infinite both;
+}
+
+.image-transforming {
+  animation: glitch-transforming 15s linear infinite both;
+}
+
+.image-werewolf {
+  animation: glitch-werewolf 15s linear infinite both;
+}
+
+@keyframes glitch-human {
+
+  /* start */
+  0% {
+    opacity: 1;
+  }
+
+  /* flash 1 */
+  22% {
+    opacity: 1;
+  }
+
+  22.1% {
+    opacity: 0;
+  }
+
+  22.3% {
+    opacity: 0;
+  }
+
+  22.4% {
+    opacity: 1;
+  }
+
+  /* flash 2 */
+  25% {
+    opacity: 1;
+  }
+
+  25.1% {
+    opacity: 0;
+  }
+
+  25.4% {
+    opacity: 0;
+  }
+
+  25.5% {
+    opacity: 1;
+  }
+
+  /* flash 3 */
+  27% {
+    opacity: 1;
+  }
+
+  27.1% {
+    opacity: 0;
+  }
+
+  27.4% {
+    opacity: 0;
+  }
+
+  27.5% {
+    opacity: 1;
+  }
+
+  /* partial change */
+  38% {
+    opacity: 1;
+  }
+
+  38.1% {
+    opacity: 0;
+  }
+
+  38.6% {
+    opacity: 0;
+  }
+
+  38.7% {
+    opacity: 1;
+  }
+
+  /* flash 4 */
+  47% {
+    opacity: 1;
+  }
+
+  47.1% {
+    opacity: 0;
+  }
+
+  47.7% {
+    opacity: 0;
+  }
+
+  47.8% {
+    opacity: 1;
+  }
+
+  /* full change */
+  48% {
+    opacity: 1;
+  }
+
+  48.1% {
+    opacity: 0;
+  }
+
+  48.7% {
+    opacity: 0;
+  }
+
+  48.8% {
+    opacity: 1;
+  }
+
+  49.9% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  /* full change back */
+  90.9% {
+    opacity: 0;
+  }
+
+  91% {
+    opacity: 1;
+  }
+
+  91.6% {
+    opacity: 1;
+  }
+
+  91.7% {
+    opacity: 0;
+  }
+
+  92.9% {
+    opacity: 0;
+  }
+
+  93% {
+    opacity: 1;
+  }
+
+  /* flash 7 */
+  95% {
+    opacity: 1;
+  }
+
+  95.1% {
+    opacity: 0;
+  }
+
+  95.4% {
+    opacity: 0;
+  }
+
+  95.5% {
+    opacity: 1;
+  }
+
+  /* flash 8 */
+  97% {
+    opacity: 1;
+  }
+
+  97.1% {
+    opacity: 0;
+  }
+
+  97.3% {
+    opacity: 0;
+  }
+
+  97.4% {
+    opacity: 1;
+  }
+
+  /* flash 9 */
+  99% {
+    opacity: 1;
+  }
+
+  99.1% {
+    opacity: 0;
+  }
+
+  99.3% {
+    opacity: 0;
+  }
+
+  99.4% {
+    opacity: 1;
+  }
+
+  /* end */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glitch-transforming {
+
+  /* partial change */
+  38% {
+    opacity: 0;
+  }
+
+  38.1% {
+    opacity: 1;
+  }
+
+  38.6% {
+    opacity: 1;
+  }
+
+  38.7% {
+    opacity: 0;
+  }
+
+  /* full change */
+  48% {
+    opacity: 0;
+  }
+
+  48.1% {
+    opacity: 1;
+  }
+
+  48.7% {
+    opacity: 1;
+  }
+
+  48.8% {
+    opacity: 0;
+  }
+
+  /* partian change back */
+  61.9% {
+    opacity: 0;
+  }
+
+  62% {
+    opacity: 1;
+  }
+
+  62.7% {
+    opacity: 1;
+  }
+
+  62.8% {
+    opacity: 0;
+  }
+
+  /* full change back */
+  88.9% {
+    opacity: 0;
+  }
+
+  89% {
+    opacity: 1;
+  }
+
+  90.9% {
+    opacity: 1;
+  }
+
+  91% {
+    opacity: 0;
+  }
+
+  /* end */
+  0%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes glitch-werewolf {
+
+  /* full change */
+  50.5% {
+    opacity: 0;
+  }
+
+  50.6% {
+    opacity: 1;
+  }
+
+  /* flash 5 */
+  52.1% {
+    opacity: 1;
+  }
+
+  52.2% {
+    opacity: 0;
+  }
+
+  52.7% {
+    opacity: 0;
+  }
+
+  52.8% {
+    opacity: 1;
+  }
+
+  /* partian change back */
+  61.9% {
+    opacity: 1;
+  }
+
+  62% {
+    opacity: 0;
+  }
+
+  62.7% {
+    opacity: 0;
+  }
+
+  62.8% {
+    opacity: 1;
+  }
+
+  /* flash 6 */
+  81.9% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 0;
+  }
+
+  82.5% {
+    opacity: 0;
+  }
+
+  82.6% {
+    opacity: 1;
+  }
+
+  /* full change back */
+  88.9% {
+    opacity: 1;
+  }
+
+  89% {
+    opacity: 0;
+  }
+
+  /* end */
+  0%,
+  100% {
+    opacity: 0;
+  }
+}
