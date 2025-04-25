@@ -1,0 +1,14 @@
+[data-theme="assert"] {
+  --bg-color: greenyellow;
+  --text-color: midnightblue;
+  --link-color: rebeccapurple;
+  --link-visited-color: violet;
+  --font-family-copy: "Roboto Mono", monospace;
+  --font-family-heading: "Helvetica Neue", Helvetica, Arial;
+}
+
+.theme-switch#assert {
+  border-color: greenyellow;
+  background-color: greenyellow;
+  color: midnightblue;
+}

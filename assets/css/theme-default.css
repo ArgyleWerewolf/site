@@ -1,0 +1,15 @@
+:root {
+  --bg-color: darkslateblue;
+  --text-color: white;
+  --link-color: violet;
+  --link-visited-color: greenyellow;
+  --font-family-copy: Courier, monospace;
+  --font-family-heading: Courier, monospace;
+}
+
+.theme-switch#default {
+  border-color: white;
+  background-color: transparent;
+  color: white;
+  border-radius: 100%;
+}
