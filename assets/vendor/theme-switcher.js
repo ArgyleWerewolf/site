@@ -11,6 +11,12 @@ const STORAGE_KEY = 'theme';
 const setTheme = (theme) => {
   const html = document.documentElement;
 
+  // the "default" theme should also be the default CSS, since this
+  // file's functions only run after the DOM has loaded, and I don't
+  // want to risk a flash of partially-styled content. So we remove
+  // the THEME_ATTR from the <html> tag entirely, rather than applying
+  // a "default" value to it.
+
   theme === DEFAULT_THEME
     ? html.removeAttribute(THEME_ATTR)
     : html.setAttribute(THEME_ATTR, theme);
