@@ -108,7 +108,7 @@ img {
   bottom: -30px;
   text-align: center;
   font-size: 11px;
-  color: rebeccapurple;
+  color: var(--bg-color);
   opacity: 0.4;
 }
 
