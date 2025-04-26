@@ -1,0 +1,48 @@
+.ltq h1 {
+  font-size: 50px;
+  margin-top: 8px;
+  line-height: 1.2;
+  font-style: italic;
+  max-width: 80%;
+}
+
+.ltq h2 {
+  font-weight: 400;
+}
+
+.ltq .intro {
+  border-bottom: 1px solid dimgray;
+}
+
+.ltq .outro {
+  border-top: 1px solid dimgray;
+}
+
+.ltq .outro img.spot {
+  margin: 20px 0 10px 20px;
+  width: 180px;
+}
+
+@media only screen and (min-width: 1024px) {
+  .ltq h1 {
+    max-width: 540px;
+    font-size: 42px;
+  }
+
+  .ltq .intro h2 {
+    max-width: 600px;
+  }
+
+  .ltq .number {
+    margin-left: -34px;
+  }
+
+  .ltq .outro h3 {
+    max-width: 460px;
+  }
+
+  .ltq .outro img.spot {
+    margin: 10px 0 10px 30px;
+    width: 250px;
+  }
+}

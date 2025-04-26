@@ -35,3 +35,5 @@ argyle_werewolf-*.tar
 npm-debug.log
 /assets/node_modules/
 
+# Mac shit
+.DS_Store

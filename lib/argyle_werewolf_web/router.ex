@@ -18,6 +18,7 @@ defmodule ArgyleWerewolfWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/lycanthropy-thesis-questions/", PageController, :ltq
   end
 
   # Other scopes may use custom stacks.

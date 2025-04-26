@@ -1,6 +1,7 @@
 /* No Tailwind for this, thanks. */
-@import url(theme-default.css);
-@import url(theme-assert.css);
+@import url(ltq.css);
+
+/* Structure */
 
 body {
   background-color: var(--bg-color);
@@ -8,6 +9,7 @@ body {
   font-family: var(--font-family-copy);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 16px;
+  line-height: 1.2;
 }
 
 .mobile-only {
@@ -17,6 +19,40 @@ body {
 .desktop-only {
   display: none;
 }
+
+dt {
+  padding-top: 16px;
+  font-weight: 600;
+}
+
+main {
+  margin: 20px;
+}
+
+.intro {
+  padding-bottom: 20px;
+  margin-bottom: 60px;
+}
+
+.outro {
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.sidebar,
+.content {
+  width: 100%;
+}
+
+.content {
+  padding-bottom: 30px;
+}
+
+section {
+  padding-bottom: 30px;
+}
+
+/* Theme UI */
 
 #theme-control {
   position: absolute;
@@ -36,6 +72,8 @@ body {
   cursor: default;
 }
 
+/* Typography */
+
 h1 {
   font-size: 42px;
   margin-top: 8px;
@@ -52,23 +90,11 @@ a:visited {
   color: var(--link-visited-color);
 }
 
-dt {
-  padding-top: 16px;
-  font-weight: 600;
+a.number:link {
+  text-decoration: none;
 }
 
-.wrapper {
-  margin: 20px;
-}
-
-.sidebar,
-.content {
-  width: 100%;
-}
-
-.content {
-  padding-bottom: 30px;
-}
+/* Images */
 
 .image-container {
   width: 35%;
@@ -87,6 +113,13 @@ dt {
   opacity: 0.4;
 }
 
+.spot {
+  width: 40%;
+  float: right;
+  margin: 0 0 30px 40px;
+}
+
+
 @media only screen and (min-width: 1024px) {
   .mobile-only {
     display: none;
@@ -96,25 +129,36 @@ dt {
     display: inherit;
   }
 
-  .wrapper {
+  main {
     margin: 50px auto;
-    width: 900px;
+    max-width: 960px;
   }
 
   .sidebar {
     float: left;
-    width: 320px;
-    padding-right: 60px;
+    width: 340px;
+    padding-right: 70px;
     text-align: right;
   }
 
   .content {
     float: left;
-    width: 520px;
+    width: 550px;
+  }
+
+  .document {
+    max-width: 720px;
+    padding-left: 120px;
   }
 
   .image-container {
     width: 100%;
     padding-bottom: 40px;
   }
+
+  img.spot {
+    margin: 0 -100px 30px 50px;
+    width: 350px;
+  }
+
 }
