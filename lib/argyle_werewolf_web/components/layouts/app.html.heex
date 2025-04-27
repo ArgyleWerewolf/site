@@ -1,19 +1,21 @@
-<header>
-  <div id="theme-control">
-    <button class="theme-switch" id="default">1</button>
-    <button class="theme-switch" id="assert">2</button>
-    <button class="mode-switch" id="mode-switch">🌙</button>
-  </div>
-</header>
-
 <main>
   <.flash_group flash={@flash} />
   <div class="sidebar">
-    <div class="portrait">
-      <img src={~p"/images/angela-1.png"} alt="coloured illustration of angela as a human" />
-    </div>
+    <img
+      class="portrait"
+      src={~p"/images/angela-1.png"}
+      alt="coloured illustration of angela as a human"
+    />
+
+    <h2>Angela Quinton</h2>
 
     <.sidebar_nav items={@nav_items} current_section={@current_section} />
+
+    <div id="theme-control">
+      <button class="theme-switch" id="default">1</button>
+      <button class="theme-switch" id="assert">2</button>
+      <button class="mode-switch" id="mode-switch">🌙</button>
+    </div>
   </div>
   <div class="content">
     {@inner_content}

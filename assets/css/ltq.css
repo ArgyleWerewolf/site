@@ -1,4 +1,4 @@
-.ltq h1 {
+.ltq .content h1 {
   font-size: 50px;
   margin-top: 8px;
   line-height: 1.2;
@@ -6,7 +6,7 @@
   max-width: 80%;
 }
 
-.ltq h2 {
+.ltq .content h2 {
   font-weight: 400;
 }
 
@@ -24,7 +24,7 @@
 }
 
 @media only screen and (min-width: 1024px) {
-  .ltq h1 {
+  .ltq .content h1 {
     max-width: 540px;
     font-size: 42px;
   }

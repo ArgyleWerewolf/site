@@ -4,7 +4,7 @@
   https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
 */
 @import url(home.css);
-@import url(ltq.css);
+/* @import url(ltq.css); */
 
 /* Structure */
 
@@ -36,7 +36,12 @@ main {
   width: 100%;
 }
 
-.portrait img {
+.sidebar {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+img.portrait {
   width: 100%;
   max-width: 360px;
   display: block;
@@ -53,7 +58,7 @@ main {
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 12px 0;
   text-align: center;
   line-height: 1.4;
 }
@@ -95,13 +100,14 @@ section {
   position: absolute;
   top: 24px;
   right: 24px;
-  /* display: none; */
 }
 
 .theme-switch, .mode-switch {
   cursor: pointer;
   border: 1px solid;
   font-family: var(--font-family-secondary);
+  height: 20px;
+  width: 20px;
 }
 
 .theme-switch.active {
@@ -118,8 +124,15 @@ section {
 /* Typography */
 
 h1 {
-  font-size: 42px;
+  font-size: 48px;
   margin-top: 8px;
+  font-family: var(--font-family-secondary);
+  color: var(--text-color-secondary);
+  text-transform: lowercase;
+}
+
+.sidebar h2 {
+  font-size: 42px;
   font-family: var(--font-family-secondary);
   color: var(--text-color-secondary);
   text-transform: lowercase;
@@ -170,20 +183,33 @@ dt {
     float: left;
     width: 300px;
     margin-right: 60px;
-    text-align: right;
+    margin-bottom: 0;
   }
 
-  .portrait img {
+  .sidebar h2 {
+    font-size: 32px;
+  }
+
+  img.portrait {
     max-width: initial;
+    width: 100%;
+  }
+
+  nav ul {
+    margin: 24px 0;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #theme-control {
+    position: initial;
+    margin: 48px 0;
   }
 
   .content {
     float: left;
     width: 600px;
-  }
-
-  .portrait {
-    width: 100%;
   }
 
   img.spot {
