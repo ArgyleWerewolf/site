@@ -10,6 +10,7 @@
   --link-visited-color: chartreuse;
   --font-family-primary: Courier, monospace;
   --font-family-secondary: Courier, monospace;
+  text-transform: lowercase;
 }
 
 :root.dark-mode, :root[data-theme="default"].dark-mode {

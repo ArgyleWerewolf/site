@@ -14,11 +14,15 @@ body.home .content h1 {
   text-transform: lowercase;
 }
 
+body.home .content .intro {
+  line-height: 1.4;
+}
+
 @media only screen and (min-width: 1024px) {
 
   body.home .sidebar {
     width: 400px;
-    margin-top: -48px;
+    margin-top: -36px;
   }
 
   body.home nav ul {
