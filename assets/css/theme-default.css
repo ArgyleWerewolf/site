@@ -1,10 +1,24 @@
-:root {
+:root, :root[data-theme="default"] {
   --bg-color: darkslateblue;
-  --text-color: white;
+  --text-color-primary: lavenderblush;
+  --text-color-secondary: white;
+  /* --bg-color: lavenderblush;
+  --text-color-primary: darkslateblue;
+  --text-color-secondary: darkslateblue; */
+  --link-color: violet;
+  --link-visited-color: chartreuse;
+  --font-family-primary: Courier, monospace;
+  --font-family-secondary: Courier, monospace;
+}
+
+:root.dark-mode, :root[data-theme="default"].dark-mode {
+  --bg-color: darkslateblue;
+  --text-color-primary: lavenderblush;
+  --text-color-secondary: white;
   --link-color: violet;
   --link-visited-color: greenyellow;
-  --font-family-copy: Courier, monospace;
-  --font-family-heading: Courier, monospace;
+  --font-family-primary: Courier, monospace;
+  --font-family-secondary: Courier, monospace;
 }
 
 .theme-switch#default {

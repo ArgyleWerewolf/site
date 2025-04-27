@@ -3,42 +3,112 @@
 // Not hooked into LiveView in any way -- no need to over-complicate things.
 
 const DEFAULT_THEME = 'default';
-const THEME_SWITCHER = '.theme-switch';
+const THEME_SWITCHER_CLASS = '.theme-switch';
 const THEME_ATTR = 'data-theme';
 const ACTIVE_CLASS = 'active';
-const STORAGE_KEY = 'theme';
-
-const setTheme = (theme) => {
-  const html = document.documentElement;
-
-  // the "default" theme should also be the default CSS, since this
-  // file's functions only run after the DOM has loaded, and I don't
-  // want to risk a flash of partially-styled content. So we remove
-  // the THEME_ATTR from the <html> tag entirely, rather than applying
-  // a "default" value to it.
-
-  theme === DEFAULT_THEME
-    ? html.removeAttribute(THEME_ATTR)
-    : html.setAttribute(THEME_ATTR, theme);
-
-  theme === DEFAULT_THEME
-    ? localStorage.removeItem(STORAGE_KEY)
-    : localStorage.setItem(STORAGE_KEY, theme);
-
-  updateActiveButton(theme);
+const MODE_SWITCHER_ID = 'mode-switch';
+const DARK_MODE_CLASS = 'dark-mode';
+const LIGHT_MODE_CLASS = 'light-mode';
+const STORAGE_KEYS = {
+  THEME: 'theme',
+  COLOR_MODE: 'colorMode'
 };
 
-const updateActiveButton = (theme) => {
-  document.querySelectorAll(THEME_SWITCHER).forEach(btn => {
-    btn.classList.toggle(ACTIVE_CLASS, btn.id === theme);
-  });
-};
+class ThemeManager {
+  constructor() {
+    this.init();
+  }
 
-document.querySelectorAll(THEME_SWITCHER).forEach(btn => {
-  btn.addEventListener('click', () => setTheme(btn.id));
-});
+  init() {
+    this.loadPreferences();
+    this.setupEventListeners();
+    this.applyTheme();
+    this.updateModeToggle();
+  }
 
-window.addEventListener('DOMContentLoaded', () => {
-  const savedTheme = localStorage.getItem(STORAGE_KEY);
-  setTheme(savedTheme || DEFAULT_THEME);
+  loadPreferences() {
+    const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
+    if (savedTheme) {
+      document.documentElement.setAttribute(THEME_ATTR, savedTheme);
+    }
+    this.darkMode = localStorage.getItem(STORAGE_KEYS.COLOR_MODE) === DARK_MODE_CLASS;
+  }
+
+  setupEventListeners() {
+    document.querySelectorAll(THEME_SWITCHER_CLASS).forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.id;
+        this.setTheme(theme);
+      });
+    });
+
+    document.getElementById(MODE_SWITCHER_ID)?.addEventListener('click', () => {
+      this.toggleColorMode();
+    });
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+      if (!localStorage.getItem(STORAGE_KEYS.COLOR_MODE)) {
+        this.applySystemColorMode(e.matches);
+      }
+    });
+  }
+
+  setTheme(theme) {
+    const html = document.documentElement;
+
+    if (theme === DEFAULT_THEME) {
+      html.removeAttribute(THEME_ATTR);
+    } else {
+      html.setAttribute(THEME_ATTR, theme);
+    }
+
+    localStorage.setItem(STORAGE_KEYS.THEME, theme === DEFAULT_THEME ? '' : theme);
+    this.updateActiveButton(theme);
+    this.applyColorMode();
+  }
+
+  toggleColorMode() {
+    this.darkMode = !this.darkMode;
+    localStorage.setItem(STORAGE_KEYS.COLOR_MODE, this.darkMode ? DARK_MODE_CLASS : LIGHT_MODE_CLASS);
+    this.applyColorMode();
+    this.updateModeToggle();
+  }
+
+  applySystemColorMode(isDark) {
+    this.darkMode = isDark;
+    this.applyColorMode();
+    this.updateModeToggle();
+  }
+
+  applyTheme() {
+    this.applyColorMode();
+    const currentTheme = document.documentElement.getAttribute(THEME_ATTR) || DEFAULT_THEME;
+    this.updateActiveButton(currentTheme);
+  }
+
+  applyColorMode() {
+    const html = document.documentElement;
+    html.classList.remove(DARK_MODE_CLASS);
+
+    if (this.darkMode) {
+      html.classList.add(DARK_MODE_CLASS);
+    }
+  }
+
+  updateActiveButton(theme) {
+    document.querySelectorAll(THEME_SWITCHER_CLASS).forEach(btn => {
+      btn.classList.toggle(ACTIVE_CLASS, btn.id === theme);
+    });
+  }
+
+  updateModeToggle() {
+    const toggle = document.getElementById(MODE_SWITCHER_ID);
+    if (toggle) {
+      toggle.textContent = this.darkMode ? '☀️' : '🌙';
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  new ThemeManager();
 });

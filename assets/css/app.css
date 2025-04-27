@@ -1,15 +1,20 @@
 /* No Tailwind for this, thanks. */
+/*
+  All colours are named.
+  https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
+*/
 @import url(ltq.css);
 
 /* Structure */
 
 body {
   background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: var(--font-family-copy);
+  color: var(--text-color-primary);
+  font-family: var(--font-family-primary);
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: 16px;
   line-height: 1.2;
+  display: flow-root;
 }
 
 .mobile-only {
@@ -58,13 +63,13 @@ section {
   position: absolute;
   top: 24px;
   right: 24px;
-  display: none;
+  /* display: none; */
 }
 
-.theme-switch {
+.theme-switch, .mode-switch {
   cursor: pointer;
   border: 1px solid;
-  font-family: var(--font-family-heading);
+  font-family: var(--font-family-secondary);
 }
 
 .theme-switch.active {
@@ -72,12 +77,19 @@ section {
   cursor: default;
 }
 
+#mode-switch {
+  background-color: transparent;
+  border: none;
+  line-height: 1;
+}
+
 /* Typography */
 
 h1 {
   font-size: 42px;
   margin-top: 8px;
-  font-family: var(--font-family-heading);
+  font-family: var(--font-family-secondary);
+  color: var(--text-color-secondary);
   text-transform: lowercase;
 }
 

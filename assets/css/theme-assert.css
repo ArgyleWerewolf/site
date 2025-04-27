@@ -1,10 +1,21 @@
-[data-theme="assert"] {
+:root[data-theme="assert"].dark-mode {
   --bg-color: greenyellow;
-  --text-color: midnightblue;
+  --text-color-primary: midnightblue;
+  --text-color-secondary: midnightblue;
   --link-color: rebeccapurple;
   --link-visited-color: violet;
-  --font-family-copy: "Roboto Mono", monospace;
-  --font-family-heading: "Helvetica Neue", Helvetica, Arial;
+  --font-family-primary: "Roboto Mono", monospace;
+  --font-family-secondary: "Helvetica Neue", Helvetica, Arial;
+}
+
+:root[data-theme="assert"] {
+  --bg-color: midnightblue;
+  --text-color-primary: greenyellow;
+  --text-color-secondary: greenyellow;
+  --link-color: rebeccapurple;
+  --link-visited-color: violet;
+  --font-family-primary: "Roboto Mono", monospace;
+  --font-family-secondary: "Helvetica Neue", Helvetica, Arial;
 }
 
 .theme-switch#assert {
