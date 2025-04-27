@@ -3,6 +3,7 @@
   All colours are named.
   https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
 */
+@import url(home.css);
 @import url(ltq.css);
 
 /* Structure */
@@ -25,11 +26,6 @@ body {
   display: none;
 }
 
-dt {
-  padding-top: 16px;
-  font-weight: 600;
-}
-
 main {
   margin: 20px;
 }
@@ -49,6 +45,20 @@ main {
   width: 100%;
 }
 
+.portrait img {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-credit {
+  text-align: center;
+  font-size: 11px;
+  color: var(--bg-color);
+  opacity: 0.4;
+}
+
 .content {
   padding-bottom: 30px;
 }
@@ -57,7 +67,7 @@ section {
   padding-bottom: 30px;
 }
 
-/* Theme UI */
+/* Controls for Theme and Dark Mode UI */
 
 #theme-control {
   position: absolute;
@@ -106,24 +116,12 @@ a.number:link {
   text-decoration: none;
 }
 
+dt {
+  padding-top: 16px;
+  font-weight: 600;
+}
+
 /* Images */
-
-.image-container {
-  width: 35%;
-  margin: 0 auto;
-}
-
-.image-container img {
-  width: 100%;
-  display: block;
-}
-
-.image-credit {
-  text-align: center;
-  font-size: 11px;
-  color: var(--bg-color);
-  opacity: 0.4;
-}
 
 .spot {
   width: 40%;
@@ -148,24 +146,22 @@ a.number:link {
 
   .sidebar {
     float: left;
-    width: 340px;
-    padding-right: 70px;
+    width: 300px;
+    margin-right: 60px;
     text-align: right;
+  }
+
+  .portrait img {
+    max-width: initial;
   }
 
   .content {
     float: left;
-    width: 550px;
+    width: 600px;
   }
 
-  .document {
-    max-width: 720px;
-    padding-left: 120px;
-  }
-
-  .image-container {
+  .portrait {
     width: 100%;
-    padding-bottom: 40px;
   }
 
   img.spot {

@@ -1,0 +1,11 @@
+@media only screen and (min-width: 1024px) {
+
+  body.home .sidebar {
+    width: 400px;
+  }
+
+  body.home .content {
+    width: 500px;
+  }
+
+}
