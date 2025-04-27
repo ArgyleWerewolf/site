@@ -1,5 +1,6 @@
 :root, :root[data-theme="default"] {
   --bg-color: darkslateblue;
+  --accent-color: coral;
   --text-color-primary: lavenderblush;
   --text-color-secondary: white;
   /* --bg-color: lavenderblush;
@@ -13,6 +14,7 @@
 
 :root.dark-mode, :root[data-theme="default"].dark-mode {
   --bg-color: darkslateblue;
+  --accent-color: coral;
   --text-color-primary: lavenderblush;
   --text-color-secondary: white;
   --link-color: violet;
@@ -24,6 +26,6 @@
 .theme-switch#default {
   border-color: white;
   background-color: transparent;
-  color: white;
+  color: coral;
   border-radius: 100%;
 }

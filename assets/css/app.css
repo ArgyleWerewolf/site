@@ -55,12 +55,20 @@ nav ul {
   padding: 0;
   margin: 0;
   text-align: center;
+  line-height: 1.4;
 }
 
 nav ul li {
-  padding: 0;
   margin: 0;
   display: inline-block;
+  font-size: 21px;
+  margin: 0 12px;
+  text-transform: lowercase;
+}
+
+nav ul li.current a {
+  color: var(--accent-color);
+  text-decoration: none;
 }
 
 .content {
