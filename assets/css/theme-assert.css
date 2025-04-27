@@ -23,3 +23,7 @@
   background-color: greenyellow;
   color: midnightblue;
 }
+
+:root[data-theme="assert"] .portrait {
+  filter: drop-shadow(6px 8px 0 chartreuse);
+}
