@@ -10,7 +10,7 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
 
   def sidebar_nav(assigns) do
     ~H"""
-    <nav>
+    <nav class="hidden">
       <ul>
         <li :for={item <- @items} class={if item.id == @current_section, do: "current"}>
           <a href={item.link}>{item.label}</a>
