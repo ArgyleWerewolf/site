@@ -89,6 +89,7 @@ defmodule ArgyleWerewolfWeb do
       import Phoenix.HTML
       # Core UI components
       import ArgyleWerewolfWeb.CoreComponents
+      import ArgyleWerewolfWeb.ArgyleComponents
 
       # Shortcut for generating JS commands
       alias Phoenix.LiveView.JS

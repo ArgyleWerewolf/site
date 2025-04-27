@@ -1,6 +1,7 @@
 defmodule ArgyleWerewolfWeb.PageController do
   use ArgyleWerewolfWeb, :controller
-  plug :put_template_class
+  plug :put_current_section
+  plug :put_nav_items
 
   def home(conn, _params) do
     render(conn |> assign(:page_title, "Angela Quinton"), :home)
@@ -17,12 +18,24 @@ defmodule ArgyleWerewolfWeb.PageController do
     )
   end
 
-  defp put_template_class(conn, _) do
+  defp put_current_section(conn, _) do
     template =
       conn
       |> Phoenix.Controller.action_name()
       |> Atom.to_string()
 
-    assign(conn, :template_class, template)
+    assign(conn, :current_section, template)
+  end
+
+  defp put_nav_items(conn, _) do
+    items = [
+      %{id: "home", label: gettext("Home"), link: ~p"/"},
+      %{id: "code", label: gettext("Code"), link: ~p"/"},
+      %{id: "writing", label: gettext("Writing"), link: ~p"/"},
+      %{id: "design", label: gettext("Design"), link: ~p"/"},
+      %{id: "accolades", label: gettext("Accolades"), link: ~p"/"}
+    ]
+
+    assign(conn, :nav_items, items)
   end
 end
