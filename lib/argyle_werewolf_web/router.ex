@@ -21,6 +21,10 @@ defmodule ArgyleWerewolfWeb.Router do
     get "/lycanthropy-thesis-questions/", PageController, :ltq
   end
 
+  scope "/werewolves-versus", ArgyleWerewolfWeb do
+    get "/*path", WerewolvesVersusController, :bounce
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", ArgyleWerewolfWeb do
   #   pipe_through :api
