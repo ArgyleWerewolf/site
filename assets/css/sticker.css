@@ -100,10 +100,12 @@
   font-weight: 400;
   font-size: 12px;
   font-family: monospace;
+  text-transform: none;
 }
 
 .sticker.three p strong {
   font-family: sans-serif;
+  line-height: 1.8;
 }
 
 @media only screen and (min-width: 1024px) {
