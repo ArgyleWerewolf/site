@@ -4,6 +4,7 @@
   https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
 */
 @import url(home.css);
+@import url(sticker.css);
 /* @import url(ltq.css); */
 
 /* Structure */
@@ -163,6 +164,8 @@ dt {
   float: right;
   margin: 0 0 30px 40px;
 }
+
+
 
 @media only screen and (min-width: 1024px) {
   .mobile-only {
