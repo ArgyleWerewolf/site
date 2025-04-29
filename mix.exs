@@ -35,7 +35,7 @@ defmodule ArgyleWerewolf.MixProject do
       {:phoenix, "~> 1.7.21"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 1.0"},
+      {:phoenix_live_view, "~> 0.19"},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
@@ -46,7 +46,9 @@ defmodule ArgyleWerewolf.MixProject do
       {:gettext, "~> 0.26"},
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
-      {:bandit, "~> 1.5"}
+      {:bandit, "~> 1.5"},
+      {:phoenix_svg_sprites,
+       git: "https://github.com/ArgyleWerewolf/phx-svg-sprites.git", runtime: Mix.env() == :dev}
     ]
   end
 
@@ -60,9 +62,10 @@ defmodule ArgyleWerewolf.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["esbuild.install --if-missing"],
-      "assets.build": ["esbuild argyle_werewolf"],
+      "assets.build": ["esbuild argyle_werewolf", "svg_sprite_sheet"],
       "assets.deploy": [
         "esbuild argyle_werewolf --minify",
+        "svg_sprite_sheet",
         "phx.digest"
       ]
     ]
