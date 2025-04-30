@@ -1,3 +1,5 @@
 defmodule ArgyleWerewolfWeb.DesignSystem do
-  defdelegate sprite(assigns), to: PhoenixSvgSprites.Sprite
+  def sprite(assigns) do
+    apply(PhoenixSvgSprites.Sprite, :sprite, [assigns])
+  end
 end

@@ -47,8 +47,7 @@ defmodule ArgyleWerewolf.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:phoenix_svg_sprites,
-       git: "https://github.com/ArgyleWerewolf/phx-svg-sprites.git", runtime: Mix.env() == :dev}
+      {:phoenix_svg_sprites, git: "https://github.com/ArgyleWerewolf/phx-svg-sprites.git"}
     ]
   end
 

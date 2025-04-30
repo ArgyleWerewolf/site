@@ -185,11 +185,11 @@ dt {
     float: left;
     width: 300px;
     margin-right: 60px;
-    margin-bottom: 0;
   }
 
   .sidebar h2 {
     font-size: 32px;
+    margin-bottom: 56px;
   }
 
   img.portrait {
