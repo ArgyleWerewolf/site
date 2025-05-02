@@ -36,7 +36,7 @@
   and <code><em>rain</em>.svg</code>
   become:
 </p>
-<aside class="demonstrate code">
+<aside class="demonstrate code" style="margin-bottom: 40px;">
   &lt;svg&gt;<br /> &lt;symbol id="<em>bird</em>"&gt;&lt;path d="m1154.3...<br />
   &lt;symbol id="<em>rain</em>"&gt;&lt;path d="m1047...<br /> &lt;/svg&gt;
 </aside>
@@ -44,8 +44,14 @@
   <strong>PART B:</strong>
   A Phoenix component, <code>&lt;.sprite /&gt;</code>, that will render the specified SVG sprite in your HEEX template, the same way you might render a Heroicon with Core Component's <code>&lt;.icon /&gt;</code>.
 </p>
+<p>The four example sprites at the top of this page are rendered with this code:</p>
+<aside class="demonstrate code">
+  &lt;.sprite icon="animal" class="animal" /&gt;<br />
+  &lt;.sprite icon="nature" class="nature" /&gt;<br />
+  &lt;.sprite icon="bird" class="bird" /&gt;<br /> &lt;.sprite icon="rain" class="rain" /&gt;
+</aside>
 <p>
-  The SVG's internal <code>fill</code>, <code>stroke</code>, and other colour values will be preserved, but you can also use
+  CSS classes are applied to the examples to allow for specific colour styling. However, an SVG's internal <code>fill</code>, <code>stroke</code>, and other colour values will be preserved, and you can also use
   <code>currentColor</code>
   to colour your sprites dynamically through the text colour of a parent element.
 </p>
