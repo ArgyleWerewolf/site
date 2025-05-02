@@ -61,10 +61,10 @@ defmodule ArgyleWerewolf.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["esbuild.install --if-missing"],
-      "assets.build": ["esbuild argyle_werewolf", "svg_sprite_sheet"],
+      "assets.build": ["esbuild argyle_werewolf", "phoenix_svg_sprites"],
       "assets.deploy": [
         "esbuild argyle_werewolf --minify",
-        "svg_sprite_sheet",
+        "phoenix_svg_sprites",
         "phx.digest"
       ]
     ]
