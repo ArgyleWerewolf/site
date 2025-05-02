@@ -1,0 +1,62 @@
+<div class="intro">
+  <h1>Phoenix SVG Sprites</h1>
+  <p>
+    Easily combine all of your SVG assets into a single file, and display them individually in your Phoenix LiveView project.
+  </p>
+  <ul>
+    <li><strong>Code:</strong> Elixir &amp; Phoenix LiveVew</li>
+    <li>
+      <strong>Source:</strong>
+      <a href="https://github.com/ArgyleWerewolf/phx-svg-sprites">Github</a>
+    </li>
+  </ul>
+
+  <aside class="demonstrate sprites">
+    <.sprite icon="animal" class="animal" />
+    <.sprite icon="nature" class="nature" />
+    <.sprite icon="bird" class="bird" />
+    <.sprite icon="rain" class="rain" />
+  </aside>
+</div>
+<p>
+  <strong>PART A:</strong>
+  A <code>mix</code>
+  task that will traverse <code>/assets/</code>
+  (or anywhere else you point it) for SVG images of any size and complexity, and merge them together into a sprite sheet in <code>/priv/static/assets/</code>.
+</p>
+<aside class="demonstrate">
+  <code><em>➜</em> mix phoenix_svg_sprites<br /></code>
+  <code>
+    <em>➜</em> [info] Successfully generated SVG sprite sheet at priv/static/assets/sprites.svg
+  </code>
+</aside>
+<p>
+  The sprite sheet contains all of the processed SVGs, stored as <code>&lt;symbol /&gt;</code>s addressable by IDs derived from the processed SVG's filenames.
+  <code><em>bird</em>.svg</code>
+  and <code><em>rain</em>.svg</code>
+  become:
+</p>
+<aside class="demonstrate code">
+  &lt;svg&gt;<br /> &lt;symbol id="<em>bird</em>"&gt;&lt;path d="m1154.3...<br />
+  &lt;symbol id="<em>rain</em>"&gt;&lt;path d="m1047...<br /> &lt;/svg&gt;
+</aside>
+<p>
+  <strong>PART B:</strong>
+  A Phoenix component, <code>&lt;.sprite /&gt;</code>, that will render the specified SVG sprite in your HEEX template, the same way you might render a Heroicon with Core Component's <code>&lt;.icon /&gt;</code>.
+</p>
+<p>
+  The SVG's internal <code>fill</code>, <code>stroke</code>, and other colour values will be preserved, but you can also use
+  <code>currentColor</code>
+  to colour your sprites dynamically through the text colour of a parent element.
+</p>
+<p>
+  Default Tailwind size classes are applied automatically, but you can apply arbitrary classes and other attributes as well.
+</p>
+
+<div class="outro">
+  <p>
+    For more information, visit the <a href="https://github.com/ArgyleWerewolf/phx-svg-sprites">Phoenix SVG Sprites Github repo</a>.
+  </p>
+</div>
+
+<a href={~p"/"} class="in-page-nav">&larr; back</a>

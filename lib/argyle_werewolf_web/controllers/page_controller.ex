@@ -7,6 +7,10 @@ defmodule ArgyleWerewolfWeb.PageController do
     render(conn |> assign(:page_title, "Angela Quinton"), :home)
   end
 
+  def sprites(conn, _params) do
+    render(conn |> assign(:page_title, "Sprites"), :sprites)
+  end
+
   def ltq(conn, _params) do
     render(
       conn
