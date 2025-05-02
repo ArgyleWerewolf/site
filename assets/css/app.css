@@ -5,6 +5,7 @@
 */
 @import url(home.css);
 @import url(sticker.css);
+@import url(sprites.css);
 /* @import url(ltq.css); */
 
 /* Structure */
@@ -95,6 +96,19 @@ section {
   margin-top: 20px;
 }
 
+.demonstrate {
+  padding: 16px;
+  background-color: var(--demonstrate-color);
+}
+
+code {
+  background-color: var(--demonstrate-color);
+}
+
+.demonstrate code {
+  background-color: transparent;
+}
+
 /* Controls for Theme and Dark Mode UI */
 
 #theme-control {
@@ -164,7 +178,6 @@ dt {
   float: right;
   margin: 0 0 30px 40px;
 }
-
 
 
 @media only screen and (min-width: 1024px) {
