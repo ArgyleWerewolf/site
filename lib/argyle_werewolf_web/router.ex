@@ -19,7 +19,7 @@ defmodule ArgyleWerewolfWeb.Router do
 
     get "/", PageController, :home
     get "/lycanthropy-thesis-questions/", PageController, :ltq
-    get "/sprites/", PageController, :sprites
+    get "/code/sprites/", PageController, :sprites
   end
 
   scope "/werewolves-versus", ArgyleWerewolfWeb do

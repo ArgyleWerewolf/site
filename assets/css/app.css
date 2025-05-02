@@ -16,7 +16,7 @@ body {
   font-family: var(--font-family-primary);
   transition: all 0.3s ease;
   font-size: 16px;
-  line-height: 1.2;
+  line-height: 1.3;
   display: flow-root;
 }
 
@@ -76,6 +76,12 @@ nav ul li {
 nav ul li.current a {
   color: var(--accent-color);
   text-decoration: none;
+}
+
+.in-page-nav {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 20px;
 }
 
 .content {
@@ -151,6 +157,16 @@ h1 {
   font-family: var(--font-family-secondary);
   color: var(--text-color-secondary);
   text-transform: lowercase;
+}
+
+.sidebar h2 a {
+  color: var(--text-color-primary);
+  text-decoration: none;
+}
+
+.sidebar h2 a:hover {
+  text-decoration: underline;
+  color: var(--link-color);
 }
 
 a:link {
