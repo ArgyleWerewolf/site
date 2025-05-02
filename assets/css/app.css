@@ -14,10 +14,50 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color-primary);
   font-family: var(--font-family-primary);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
   font-size: 16px;
   line-height: 1.3;
   display: flow-root;
+}
+
+body::before, body::after, html::before, html::after {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: 10;
+}
+
+body::before {
+  height: 4px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--link-visited-color);
+}
+
+body::after {
+  height: 4px;
+  width: 100%;
+  bottom: calc(1vh - 8px);
+  left: 0;
+  background-color: var(--link-color);
+}
+
+
+html::before {
+  width: 4px;
+  top: 0;
+  bottom: calc(1vh - 4px);
+  left: 0;
+  background-color: var(--demonstrate-color);
+}
+
+html::after {
+  width: 4px;
+  top: 0;
+  bottom: calc(1vh - 4px);
+  right: 0;
+  background-color: var(--demonstrate-color);
 }
 
 .mobile-only {

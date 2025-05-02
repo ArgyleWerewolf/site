@@ -34,7 +34,7 @@
 }
 
 :root .portrait, :root[data-theme="default"] .portrait {
-  filter: drop-shadow(6px 8px 16px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(6px 8px 1px rgba(0, 0, 0, 0.5));
 }
 
 code, .code, .demonstrate {
