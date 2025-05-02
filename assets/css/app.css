@@ -153,7 +153,7 @@ h1 {
 }
 
 .sidebar h2 {
-  font-size: 42px;
+  font-size: 36px;
   font-family: var(--font-family-secondary);
   color: var(--text-color-secondary);
   text-transform: lowercase;
