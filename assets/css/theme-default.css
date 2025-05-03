@@ -1,16 +1,17 @@
 :root, :root[data-theme="default"] {
-  --bg-color: darkslateblue;
+  --bg-color: lavenderblush;
   --accent-color: coral;
-  --demonstrate-color: midnightblue;
-  --text-color-primary: lavenderblush;
-  --text-color-secondary: white;
-  /* --bg-color: lavenderblush;
+  --demonstrate-color: mediumvioletred;
   --text-color-primary: darkslateblue;
-  --text-color-secondary: darkslateblue; */
+  --text-color-secondary: darkslateblue;
   --link-color: violet;
   --link-visited-color: chartreuse;
   --font-family-primary: Courier, monospace;
   --font-family-secondary: Courier, monospace;
+  --frame-top-color: greenyellow;
+  --frame-right-color: violet;
+  --frame-bottom-color: coral;
+  --frame-left-color: violet;
   text-transform: lowercase;
 }
 
@@ -24,6 +25,10 @@
   --link-visited-color: greenyellow;
   --font-family-primary: Courier, monospace;
   --font-family-secondary: Courier, monospace;
+  --frame-top-color: greenyellow;
+  --frame-right-color: midnightblue;
+  --frame-bottom-color: violet;
+  --frame-left-color: midnightblue;
 }
 
 .theme-switch#default {
@@ -66,4 +71,36 @@ code:hover {
 code em, .code em {
   font-style: normal;
   color: var(--text-color-primary)
+}
+
+:root::before, :root[data-theme="default"]::before {
+  width: 4px;
+  top: 0;
+  bottom: calc(1vh - 12px);
+  left: 0;
+  background-color: var(--frame-left-color);
+}
+
+:root::after, :root[data-theme="default"]::after {
+  width: 4px;
+  top: 0;
+  bottom: calc(1vh - 12px);
+  right: 0;
+  background-color: var(--frame-right-color);
+}
+
+body::before, :root[data-theme="default"] body::before {
+  height: 4px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--frame-top-color);
+}
+
+body::after, :root[data-theme="default"] body::before {
+  height: 4px;
+  width: 100%;
+  bottom: calc(1vh - 12px);
+  left: 0;
+  background-color: var(--frame-bottom-color);
 }
