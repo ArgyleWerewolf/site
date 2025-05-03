@@ -4,6 +4,22 @@
 :root[data-theme="default"] {
   text-transform: lowercase;
 
+  main::before {
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--frame-left-color);
+  }
+
+  main::after {
+    width: 4px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background-color: var(--frame-right-color);
+  }
+
   .theme-switch#default {
     border-color: white;
     background-color: transparent;
@@ -14,4 +30,23 @@
   .portrait {
     filter: drop-shadow(-4px 4px 0 var(--shadow-color));
   }
+
+  body::before {
+    height: 4px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--frame-top-color);
+  }
+
+  body::after {
+    height: 4px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--frame-bottom-color);
+  }
+
+
 }
