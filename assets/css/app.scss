@@ -3,10 +3,11 @@
   All colours are named.
   https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
 */
-@import url(home.css);
-@import url(sticker.css);
-@import url(sprites.css);
-/* @import url(ltq.css); */
+@import "home",
+"sticker",
+"sprites",
+"theme-default",
+"theme-assert";
 
 /* Structure */
 
@@ -20,7 +21,10 @@ body {
   display: flow-root;
 }
 
-body::before, body::after, html::before, html::after {
+body::before,
+body::after,
+html::before,
+html::after {
   content: "";
   display: block;
   position: fixed;
@@ -163,7 +167,8 @@ code {
   right: 24px;
 }
 
-.theme-switch, .mode-switch {
+.theme-switch,
+.mode-switch {
   cursor: pointer;
   border: 1px solid;
   font-family: var(--font-family-secondary);

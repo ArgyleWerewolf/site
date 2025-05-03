@@ -15,7 +15,12 @@ config :argyle_werewolf, ArgyleWerewolfWeb.Endpoint,
   debug_errors: true,
   secret_key_base: "mf8WmpMK5SGUpRQ93OrTUKxazeU271gMNlQ2GK/9+C1VM8AQ+b0TYLDCCXmIlMK3",
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:argyle_werewolf, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:argyle_werewolf, ~w(--sourcemap=inline --watch)]},
+    sass: {
+      DartSass,
+      :install_and_run,
+      [:default, ~w(--embed-source-map --source-map-urls=absolute --watch)]
+    }
   ]
 
 # ## SSL Support
