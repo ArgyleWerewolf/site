@@ -9,6 +9,9 @@ const ACTIVE_CLASS = 'active';
 const MODE_SWITCHER_ID = 'mode-switch';
 const DARK_MODE_CLASS = 'dark-mode';
 const LIGHT_MODE_CLASS = 'light-mode';
+const TRANSITIONING_MODE_CLASS = 'transitioning-mode';
+const TRANSITIONING_THEME_CLASS = 'transitioning-theme';
+const TRANSITIONING_CLASS_DURATION = 1000
 const STORAGE_KEYS = {
   THEME: 'theme',
   COLOR_MODE: 'colorMode'
@@ -16,6 +19,9 @@ const STORAGE_KEYS = {
 
 class ThemeManager {
   constructor() {
+    this.initialLoad = true;
+    this.previousDarkMode = null;
+    this.previousTheme = null;
     this.init();
   }
 
@@ -24,6 +30,9 @@ class ThemeManager {
     this.setupEventListeners();
     this.applyTheme();
     this.updateModeToggle();
+    this.initialLoad = false;
+    this.previousDarkMode = this.darkMode;
+    this.previousTheme = document.documentElement.getAttribute(THEME_ATTR) || DEFAULT_THEME;
   }
 
   loadPreferences() {
@@ -55,6 +64,7 @@ class ThemeManager {
 
   setTheme(theme) {
     const html = document.documentElement;
+    const currentTheme = html.getAttribute(THEME_ATTR) || DEFAULT_THEME;
 
     if (theme === DEFAULT_THEME) {
       html.removeAttribute(THEME_ATTR);
@@ -65,6 +75,12 @@ class ThemeManager {
     localStorage.setItem(STORAGE_KEYS.THEME, theme === DEFAULT_THEME ? '' : theme);
     this.updateActiveButton(theme);
     this.applyColorMode();
+
+    if (!this.initialLoad && theme !== currentTheme) {
+      this.applyTransitionClass(TRANSITIONING_THEME_CLASS);
+    }
+
+    this.previousTheme = theme;
   }
 
   toggleColorMode() {
@@ -72,12 +88,30 @@ class ThemeManager {
     localStorage.setItem(STORAGE_KEYS.COLOR_MODE, this.darkMode ? DARK_MODE_CLASS : LIGHT_MODE_CLASS);
     this.applyColorMode();
     this.updateModeToggle();
+
+    if (!this.initialLoad) {
+      this.applyTransitionClass(TRANSITIONING_MODE_CLASS);
+    }
   }
 
   applySystemColorMode(isDark) {
     this.darkMode = isDark;
     this.applyColorMode();
     this.updateModeToggle();
+
+    if (!this.initialLoad && this.darkMode !== this.previousDarkMode) {
+      this.applyTransitionClass(TRANSITIONING_MODE_CLASS);
+    }
+    this.previousDarkMode = this.darkMode;
+  }
+
+  applyTransitionClass(className) {
+    const html = document.documentElement;
+    html.classList.add(className);
+
+    setTimeout(() => {
+      html.classList.remove(className);
+    }, TRANSITIONING_CLASS_DURATION);
   }
 
   applyTheme() {

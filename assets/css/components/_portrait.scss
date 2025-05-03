@@ -1,0 +1,49 @@
+// Define the image URLs as CSS variables
+:root {
+  --portrait-light: url('/images/angela-1.png');
+  --portrait-transition: url('/images/angela-2.png');
+  --portrait-dark: url('/images/angela-3.png');
+}
+
+#portrait {
+  display: block;
+  margin: 0 auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 360px;
+  height: 467px;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: relative;
+  background-image: var(--portrait-light);
+
+  @include desktop {
+    padding-top: 130.4348%;
+    width: initial;
+    height: initial;
+    max-width: initial;
+  }
+
+  :root.dark-mode & {
+    background-image: var(--portrait-dark);
+  }
+
+  :root:not(.dark-mode) & {
+    background-image: var(--portrait-light);
+  }
+
+  // :root.transitioning-mode & {}
+
+  // :root.transitioning-mode.dark-mode & {}
+}
+
+body::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+  content:
+    var(--portrait-light) var(--portrait-transition) var(--portrait-dark);
+}
