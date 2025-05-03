@@ -47,7 +47,8 @@ defmodule ArgyleWerewolf.MixProject do
       {:jason, "~> 1.2"},
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
-      {:phoenix_svg_sprites, git: "https://github.com/ArgyleWerewolf/phx-svg-sprites.git"}
+      {:phoenix_svg_sprites, git: "https://github.com/ArgyleWerewolf/phx-svg-sprites.git"},
+      {:dart_sass, "~> 0.7", runtime: Mix.env() == :dev}
     ]
   end
 
@@ -61,9 +62,14 @@ defmodule ArgyleWerewolf.MixProject do
     [
       setup: ["deps.get", "assets.setup", "assets.build"],
       "assets.setup": ["esbuild.install --if-missing"],
-      "assets.build": ["esbuild argyle_werewolf", "phoenix_svg_sprites"],
+      "assets.build": [
+        "esbuild argyle_werewolf",
+        "sass default",
+        "phoenix_svg_sprites"
+      ],
       "assets.deploy": [
         "esbuild argyle_werewolf --minify",
+        "sass default --no-source-map --style=compressed",
         "phoenix_svg_sprites",
         "phx.digest"
       ]

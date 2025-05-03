@@ -16,9 +16,9 @@
 //
 
 // Import CSS this way, since we're not using Tailwind.
-import "../css/theme-default.css"
-import "../css/theme-assert.css"
-import "../css/app.css"
+// import "../css/theme-default.css"
+// import "../css/theme-assert.css"
+// import "../css/app.css"
 
 // Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
 import "phoenix_html"

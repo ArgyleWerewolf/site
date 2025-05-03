@@ -1,4 +1,5 @@
-:root, :root[data-theme="default"] {
+:root,
+:root[data-theme="default"] {
   --bg-color: lavenderblush;
   --accent-color: coral;
   --demonstrate-color: mediumvioletred;
@@ -15,7 +16,8 @@
   text-transform: lowercase;
 }
 
-:root.dark-mode, :root[data-theme="default"].dark-mode {
+:root.dark-mode,
+:root[data-theme="default"].dark-mode {
   --bg-color: darkslateblue;
   --accent-color: coral;
   --demonstrate-color: midnightblue;
@@ -38,18 +40,22 @@
   border-radius: 100%;
 }
 
-:root .portrait, :root[data-theme="default"] .portrait {
+:root .portrait,
+:root[data-theme="default"] .portrait {
   filter: drop-shadow(6px 8px 1px rgba(0, 0, 0, 0.5));
 }
 
-code, .code, .demonstrate {
+code,
+.code,
+.demonstrate {
   color: var(--accent-color);
   font-size: 14px;
   padding: 4px;
   margin: 0 -2px;
 }
 
-code, .code {
+code,
+.code {
   text-transform: none;
 }
 
@@ -63,17 +69,20 @@ code:hover {
   color: var(--link-visited-color);
 }
 
-.code, .demonstrate code {
+.code,
+.demonstrate code {
   font-family: monospace;
   line-height: 1.6;
 }
 
-code em, .code em {
+code em,
+.code em {
   font-style: normal;
   color: var(--text-color-primary)
 }
 
-:root::before, :root[data-theme="default"]::before {
+:root::before,
+:root[data-theme="default"]::before {
   width: 4px;
   top: 0;
   bottom: calc(1vh - 12px);
@@ -81,7 +90,8 @@ code em, .code em {
   background-color: var(--frame-left-color);
 }
 
-:root::after, :root[data-theme="default"]::after {
+:root::after,
+:root[data-theme="default"]::after {
   width: 4px;
   top: 0;
   bottom: calc(1vh - 12px);
@@ -89,7 +99,8 @@ code em, .code em {
   background-color: var(--frame-right-color);
 }
 
-body::before, :root[data-theme="default"] body::before {
+body::before,
+:root[data-theme="default"] body::before {
   height: 4px;
   width: 100%;
   top: 0;
@@ -97,7 +108,8 @@ body::before, :root[data-theme="default"] body::before {
   background-color: var(--frame-top-color);
 }
 
-body::after, :root[data-theme="default"] body::before {
+body::after,
+:root[data-theme="default"] body::before {
   height: 4px;
   width: 100%;
   bottom: calc(1vh - 12px);
