@@ -1,0 +1,27 @@
+.demonstrate.sprites {
+  text-align: center;
+
+  svg {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    width: 45%;
+    margin: 16px 0;
+  }
+
+  .animal {
+    color: cornsilk;
+  }
+
+  .nature {
+    color: yellowgreen;
+  }
+
+  .bird {
+    color: crimson;
+  }
+
+  .rain {
+    color: mintcream;
+  }
+}

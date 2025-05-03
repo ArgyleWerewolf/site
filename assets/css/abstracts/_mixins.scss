@@ -1,0 +1,40 @@
+@mixin theme($theme-name, $mode: light) {
+  $theme: map-get($themes, $theme-name);
+  $colors: map-get($theme, $mode);
+
+  @if $colors {
+    @each $key, $value in $colors {
+      --#{$key}: #{$value};
+    }
+  }
+}
+
+@mixin apply-theme($theme-name) {
+  @if $theme-name =="default" {
+
+    :root,
+    :root[data-theme="#{$theme-name}"] {
+      @include theme($theme-name, light);
+
+      &.dark-mode {
+        @include theme($theme-name, dark);
+      }
+    }
+  }
+
+  @else {
+    :root[data-theme="#{$theme-name}"] {
+      @include theme($theme-name, light);
+
+      &.dark-mode {
+        @include theme($theme-name, dark);
+      }
+    }
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}

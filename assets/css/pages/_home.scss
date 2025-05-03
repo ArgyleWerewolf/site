@@ -1,0 +1,38 @@
+body.home {
+  .sidebar h2 {
+    display: none;
+  }
+
+  nav ul {
+    margin-bottom: 36px;
+  }
+
+  .content {
+    h1 {
+      font-size: 36px;
+      margin-top: 8px;
+      font-family: var(--font-family-secondary);
+      color: var(--text-color-secondary);
+      text-transform: lowercase;
+    }
+
+    .intro {
+      line-height: 1.4;
+    }
+  }
+
+  @include desktop {
+    .sidebar {
+      width: 400px;
+      margin-top: -36px;
+    }
+
+    nav ul {
+      margin: 24px auto;
+    }
+
+    .content {
+      width: 500px;
+    }
+  }
+}

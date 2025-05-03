@@ -1,0 +1,135 @@
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color-primary);
+  font-family: var(--font-family-primary);
+  transition: all 0.3s ease;
+  font-size: 16px;
+  line-height: 1.3;
+  display: flow-root;
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    position: fixed;
+    z-index: 11;
+  }
+}
+
+html::before,
+html::after {
+  content: "";
+  display: block;
+  position: fixed;
+  z-index: 10;
+}
+
+.mobile-only {
+  display: inherit;
+}
+
+.desktop-only,
+.hidden {
+  display: none;
+}
+
+main {
+  margin: 20px;
+}
+
+.sidebar,
+.content {
+  width: 100%;
+}
+
+.sidebar {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+img.portrait {
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-credit {
+  text-align: center;
+  font-size: 11px;
+  color: var(--bg-color);
+  opacity: 0.4;
+}
+
+.content {
+  padding-bottom: 30px;
+}
+
+section {
+  padding-bottom: 30px;
+}
+
+.intro {
+  margin-bottom: 48px;
+  font-size: 18px;
+}
+
+.outro {
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.demonstrate {
+  padding: 16px;
+  background-color: var(--demonstrate-color);
+}
+
+code {
+  background-color: var(--demonstrate-color);
+
+  .demonstrate & {
+    background-color: transparent;
+  }
+}
+
+.spot {
+  width: 40%;
+  float: right;
+  margin: 0 0 30px 40px;
+}
+
+@include desktop {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-only {
+    display: inherit;
+  }
+
+  main {
+    margin: 50px auto;
+    max-width: 960px;
+  }
+
+  .sidebar {
+    float: left;
+    width: 300px;
+    margin-right: 60px;
+  }
+
+  img.portrait {
+    max-width: initial;
+    width: 100%;
+  }
+
+  .content {
+    float: left;
+    width: 600px;
+  }
+
+  img.spot {
+    margin: 0 -100px 30px 50px;
+    width: 350px;
+  }
+}

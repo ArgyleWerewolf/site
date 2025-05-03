@@ -1,0 +1,30 @@
+#theme-control {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  @include desktop {
+    position: initial;
+    margin: 48px 0;
+  }
+}
+
+.theme-switch,
+.mode-switch {
+  cursor: pointer;
+  border: 1px solid;
+  font-family: var(--font-family-secondary);
+  height: 20px;
+  width: 20px;
+
+  &.active {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+#mode-switch {
+  background-color: transparent;
+  border: none;
+  line-height: 1;
+}

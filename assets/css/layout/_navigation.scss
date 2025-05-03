@@ -1,0 +1,26 @@
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  text-align: center;
+  line-height: 1.4;
+
+  li {
+    margin: 0;
+    display: inline-block;
+    font-size: 21px;
+    margin: 0 12px;
+    text-transform: lowercase;
+
+    &.current a {
+      color: var(--accent-color);
+      text-decoration: none;
+    }
+  }
+}
+
+.in-page-nav {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 20px;
+}

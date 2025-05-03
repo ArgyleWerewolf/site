@@ -1,0 +1,17 @@
+@include apply-theme(default);
+
+:root,
+:root[data-theme="default"] {
+  text-transform: lowercase;
+
+  .theme-switch#default {
+    border-color: white;
+    background-color: transparent;
+    color: coral;
+    border-radius: 100%;
+  }
+
+  .portrait {
+    filter: drop-shadow(6px 8px 1px rgba(0, 0, 0, 0.5));
+  }
+}

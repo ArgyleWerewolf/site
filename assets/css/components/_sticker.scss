@@ -1,0 +1,121 @@
+.sticker-sheet {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin: 16px auto;
+  height: 200px;
+
+  @include desktop {
+    height: 250px;
+  }
+}
+
+.sticker {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 100%;
+  text-align: center;
+
+  &.one {
+    z-index: 2;
+    top: -10px;
+    left: -20px;
+    width: 140px;
+    height: 140px;
+    background: coral;
+    background: -webkit-linear-gradient(-135deg, transparent 45px, coral 0, orangered);
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+
+    p {
+      transform: rotate(-12deg);
+      color: oldlace;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 20px;
+      font-family: sans-serif;
+    }
+  }
+
+  &.two {
+    z-index: 1;
+    top: 5px;
+    left: 100px;
+    width: 180px;
+    height: 180px;
+    background: greenyellow;
+    background: -webkit-linear-gradient(-135deg, greenyellow 0, lightgreen 85%);
+    border: 8px solid white;
+    padding: 20px;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+
+    p {
+      transform: rotate(8deg);
+      color: darkslategrey;
+      font-weight: 400;
+      font-size: 15px;
+      font-family: serif;
+
+      span {
+        color: green;
+        font-weight: 500;
+        font-size: 19px;
+        bottom: -2px;
+        position: relative;
+        line-height: 1;
+      }
+    }
+
+    @include desktop {
+      top: 25px;
+    }
+  }
+
+  &.three {
+    z-index: 2;
+    top: 109px;
+    left: 25px;
+    width: 110px;
+    height: 110px;
+    background: tomato;
+    background: -webkit-linear-gradient(-135deg, gold 0, orange 70%);
+    border: 4px solid orange;
+    padding: 10px;
+    box-shadow: -2px 2px 2px rgba(0, 0, 0, 0.5);
+
+    p {
+      transform: rotate(8deg);
+      color: darkslategrey;
+      font-weight: 400;
+      font-size: 12px;
+      font-family: monospace;
+      text-transform: none;
+
+      strong {
+        font-family: sans-serif;
+        line-height: 1.8;
+      }
+    }
+
+    @include desktop {
+      top: 135px;
+      left: 20px;
+    }
+  }
+
+  .fold {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 160px;
+    top: -96px;
+    right: -96px;
+    border-radius: 100%;
+    background: -webkit-linear-gradient(-135deg, transparent 180px, #cab567 160px, #feeba7 85%);
+  }
+}
