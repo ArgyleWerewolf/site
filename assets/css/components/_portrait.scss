@@ -14,9 +14,9 @@
   width: 360px;
   height: 467px;
   text-indent: -9999px;
-  overflow: hidden;
   position: relative;
   background-image: var(--portrait-light);
+  filter: drop-shadow(-4px 6px 0 var(--shadow-color));
 
   @include desktop {
     padding-top: 130.4348%;
@@ -33,17 +33,7 @@
     background-image: var(--portrait-light);
   }
 
-  // :root.transitioning-mode & {}
-
-  // :root.transitioning-mode.dark-mode & {}
-}
-
-body::after {
-  position: absolute;
-  width: 0;
-  height: 0;
-  overflow: hidden;
-  z-index: -1;
-  content:
-    var(--portrait-light) var(--portrait-transition) var(--portrait-dark);
+  :root:not(.dark-mode) &:hover {
+    background-image: var(--portrait-transition);
+  }
 }

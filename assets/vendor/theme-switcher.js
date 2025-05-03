@@ -11,7 +11,7 @@ const DARK_MODE_CLASS = 'dark-mode';
 const LIGHT_MODE_CLASS = 'light-mode';
 const TRANSITIONING_MODE_CLASS = 'transitioning-mode';
 const TRANSITIONING_THEME_CLASS = 'transitioning-theme';
-const TRANSITIONING_CLASS_DURATION = 1000
+const TRANSITIONING_CLASS_DURATION = 1500;
 const STORAGE_KEYS = {
   THEME: 'theme',
   COLOR_MODE: 'colorMode'
