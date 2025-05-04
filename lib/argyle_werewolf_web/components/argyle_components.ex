@@ -16,9 +16,9 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
         <button class="theme-switch" id="default">1</button>
         <button class="theme-switch" id="assert">2</button>
       </div>
-      <button :if={@show_mode} id="mode-switch">
-        <.sprite icon="full-moon" class="svg-sprite moon" />
-        <.sprite icon="sun" class="svg-sprite sun" />
+      <button :if={@show_mode} id="mode-switch" aria-label={gettext("Light / Dark mode toggle")}>
+        <.sprite icon="full-moon" class="svg-sprite moon" title={gettext("The moon")} />
+        <.sprite icon="sun" class="svg-sprite sun" title={gettext("The sun")} />
       </button>
     </div>
     """

@@ -28,12 +28,12 @@
     width: 140px;
     height: 140px;
     background: coral;
-    background: -webkit-linear-gradient(-135deg, transparent 45px, coral 0, orangered);
+    background: -webkit-linear-gradient(-135deg, transparent 45px, coral 0, crimson);
     box-shadow: -2px 2px 2px var(--shadow-color);
 
     p {
       transform: rotate(-12deg);
-      color: oldlace;
+      color: white;
       text-transform: uppercase;
       font-weight: 800;
       font-size: 20px;
@@ -61,7 +61,7 @@
       font-family: serif;
 
       span {
-        color: green;
+        color: darkgreen;
         font-weight: 500;
         font-size: 19px;
         bottom: -2px;

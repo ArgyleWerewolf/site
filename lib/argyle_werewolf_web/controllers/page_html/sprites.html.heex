@@ -12,10 +12,10 @@
   </ul>
 
   <aside class="demonstrate sprites">
-    <.sprite icon="animal" class="animal" />
-    <.sprite icon="nature" class="nature" />
-    <.sprite icon="bird" class="bird" />
-    <.sprite icon="rain" class="rain" />
+    <.sprite icon="animal" class="animal" title="Rabbit" />
+    <.sprite icon="nature" class="nature" title="Trees" />
+    <.sprite icon="bird" class="bird" title="Bird" />
+    <.sprite icon="rain" class="rain" title="Rain" />
   </aside>
 </div>
 <p>
@@ -31,8 +31,9 @@
   </code>
 </aside>
 <p>
-  The sprite sheet contains all of the processed SVGs, stored as <code>&lt;symbol /&gt;</code>s addressable by IDs derived from the processed SVG's filenames.
-  <code><em>bird</em>.svg</code>
+  The sprite sheet contains all of the processed SVGs, each stored as a
+  <code>&lt;symbol /&gt;</code>
+  addressable by an ID derived from the processed SVG's filename. <code><em>bird</em>.svg</code>
   and <code><em>rain</em>.svg</code>
   become:
 </p>

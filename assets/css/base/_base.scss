@@ -77,11 +77,11 @@ section {
 
 .demonstrate {
   padding: 16px;
-  background-color: var(--demonstrate-color);
+  background-color: var(--demonstrate-bg-color);
 }
 
 code {
-  background-color: var(--demonstrate-color);
+  background-color: var(--demonstrate-bg-color);
 
   .demonstrate & {
     background-color: transparent;
