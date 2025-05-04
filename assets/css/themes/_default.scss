@@ -27,10 +27,6 @@
     border-radius: 100%;
   }
 
-  .portrait {
-    filter: drop-shadow(-4px 4px 0 var(--shadow-color));
-  }
-
   body::before {
     height: 4px;
     top: 0;
