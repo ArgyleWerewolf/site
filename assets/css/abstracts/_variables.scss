@@ -1,18 +1,23 @@
+/*
+  All colours are named.
+  https://developer.mozilla.org/en-US/docs/Web/CSS/named-color
+*/
+
 $themes: (
-  default: (light: (bg-color: lavenderblush,
+  default: (light: (bg-color: honeydew,
       accent-color: coral,
       demonstrate-color: mediumvioletred,
       text-color-primary: darkslateblue,
       text-color-secondary: darkslateblue,
-      link-color: violet,
-      link-visited-color: chartreuse,
+      link-color: orchid,
+      link-visited-color: yellowgreen,
       font-family-primary: #{Courier, monospace},
       font-family-secondary: #{Courier, monospace},
-      frame-top-color: greenyellow,
-      frame-right-color: violet,
+      frame-top-color: yellowgreen,
+      frame-right-color: mediumvioletred,
       frame-bottom-color: coral,
-      frame-left-color: violet,
-      shadow-color: rgba(violet, 0.7)),
+      frame-left-color: mediumvioletred,
+      shadow-color: rgba(mediumvioletred, 0.7)),
     dark: (bg-color: darkslateblue,
       accent-color: coral,
       demonstrate-color: midnightblue,
@@ -26,7 +31,7 @@ $themes: (
       frame-right-color: midnightblue,
       frame-bottom-color: violet,
       frame-left-color: midnightblue,
-      shadow-color: rgba(mediumvioletred, 0.7))),
+      shadow-color: rgba(midnightblue, 0.7))),
   assert: (light: (bg-color: midnightblue,
       text-color-primary: greenyellow,
       text-color-secondary: greenyellow,
