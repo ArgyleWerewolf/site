@@ -29,7 +29,6 @@ class ThemeManager {
     this.loadPreferences();
     this.setupEventListeners();
     this.applyTheme();
-    this.updateModeToggle();
     this.initialLoad = false;
     this.previousDarkMode = this.darkMode;
     this.previousTheme = document.documentElement.getAttribute(THEME_ATTR) || DEFAULT_THEME;
@@ -87,17 +86,16 @@ class ThemeManager {
     this.darkMode = !this.darkMode;
     localStorage.setItem(STORAGE_KEYS.COLOR_MODE, this.darkMode ? DARK_MODE_CLASS : LIGHT_MODE_CLASS);
     this.applyColorMode();
-    this.updateModeToggle();
 
     if (!this.initialLoad) {
       this.applyTransitionClass(TRANSITIONING_MODE_CLASS);
+      void document.documentElement.offsetWidth;
     }
   }
 
   applySystemColorMode(isDark) {
     this.darkMode = isDark;
     this.applyColorMode();
-    this.updateModeToggle();
 
     if (!this.initialLoad && this.darkMode !== this.previousDarkMode) {
       this.applyTransitionClass(TRANSITIONING_MODE_CLASS);
@@ -133,13 +131,6 @@ class ThemeManager {
     document.querySelectorAll(THEME_SWITCHER_CLASS).forEach(btn => {
       btn.classList.toggle(ACTIVE_CLASS, btn.id === theme);
     });
-  }
-
-  updateModeToggle() {
-    const toggle = document.getElementById(MODE_SWITCHER_ID);
-    if (toggle) {
-      toggle.textContent = this.darkMode ? '☀️' : '🌙';
-    }
   }
 }
 

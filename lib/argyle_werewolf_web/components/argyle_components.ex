@@ -4,6 +4,25 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
   """
   use Phoenix.Component
   use Gettext, backend: ArgyleWerewolfWeb.Gettext
+  import ArgyleWerewolfWeb.DesignSystem
+
+  attr :show_themes, :boolean, default: false
+  attr :show_mode, :boolean, default: false
+
+  def ui_controls(assigns) do
+    ~H"""
+    <div id="ui-controls">
+      <div :if={@show_themes} class="themes">
+        <button class="theme-switch" id="default">1</button>
+        <button class="theme-switch" id="assert">2</button>
+      </div>
+      <button :if={@show_mode} id="mode-switch">
+        <.sprite icon="full-moon" class="svg-sprite moon" />
+        <.sprite icon="sun" class="svg-sprite sun" />
+      </button>
+    </div>
+    """
+  end
 
   attr :items, :list
   attr :current_section, :string
