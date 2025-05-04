@@ -1,0 +1,92 @@
+$dim: 32px;
+
+#ui-controls {
+  position: absolute;
+  top: $dim;
+  right: $dim;
+  display: flow-root;
+
+  .themes {
+    float: left;
+    border-right: 1px solid;
+  }
+}
+
+.theme-switch {
+  cursor: pointer;
+  border: 1px solid;
+  font-family: var(--font-family-secondary);
+  height: $dim;
+  width: $dim;
+  float: left;
+  margin-right: 8px;
+  display: none;
+
+  &.active {
+    opacity: 0.5;
+    cursor: default;
+  }
+}
+
+#mode-switch {
+  border: none;
+  height: $dim;
+  width: $dim;
+  padding: 0;
+  overflow: hidden;
+  color: var(--text-color-primary);
+  background-color: transparent;
+  cursor: pointer;
+  border-bottom: 1px solid var(--text-color-primary);
+  position: relative;
+  transition: color 0.2s ease;
+
+  .svg-sprite {
+    height: 100%;
+    width: $dim;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: transform 0.4s ease-in-out;
+  }
+
+  .moon {
+    transform: translateY(0);
+
+    &:hover {
+      color: var(--moon-color);
+    }
+  }
+
+  .sun {
+    transform: translateY(-100%);
+
+    &:hover {
+      color: var(--sun-color);
+    }
+  }
+}
+
+:root.dark-mode #mode-switch {
+  .moon {
+    transform: translateY(100%);
+  }
+
+  .sun {
+    transform: translateY(0);
+  }
+}
+
+:root:not(.dark-mode) #mode-switch {
+  .sun {
+    opacity: 0;
+  }
+}
+
+:root.transitioning-mode #mode-switch {
+
+  .moon,
+  .sun {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+}

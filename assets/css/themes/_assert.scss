@@ -1,0 +1,13 @@
+@include apply-theme(assert);
+
+:root[data-theme="assert"] {
+  .theme-switch#assert {
+    border-color: greenyellow;
+    background-color: greenyellow;
+    color: midnightblue;
+  }
+
+  .portrait {
+    filter: drop-shadow(6px 8px 0 chartreuse);
+  }
+}
