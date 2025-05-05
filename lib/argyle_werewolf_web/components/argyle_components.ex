@@ -38,4 +38,13 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
     </nav>
     """
   end
+
+  attr :to, :string, default: "/"
+  attr :text, :string, default: "← back"
+
+  def back_link(assigns) do
+    ~H"""
+    <a href={@to} class="in-page-nav">{@text}</a>
+    """
+  end
 end

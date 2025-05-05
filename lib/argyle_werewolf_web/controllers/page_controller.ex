@@ -7,8 +7,16 @@ defmodule ArgyleWerewolfWeb.PageController do
     render(conn |> assign(:page_title, "Angela Quinton"), :home)
   end
 
+  def code(conn, _params) do
+    render(conn |> assign(:page_title, "Code"), :code)
+  end
+
   def sprites(conn, _params) do
     render(conn |> assign(:page_title, "Sprites"), :sprites)
+  end
+
+  def writing(conn, _params) do
+    render(conn |> assign(:page_title, "Writing"), :writing)
   end
 
   def ltq(conn, _params) do
@@ -20,6 +28,14 @@ defmodule ArgyleWerewolfWeb.PageController do
       ),
       :ltq
     )
+  end
+
+  def design(conn, _params) do
+    render(conn |> assign(:page_title, "Design"), :design)
+  end
+
+  def about(conn, _params) do
+    render(conn |> assign(:page_title, "About"), :about)
   end
 
   defp put_current_section(conn, _) do
