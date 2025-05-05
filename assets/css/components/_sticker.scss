@@ -1,12 +1,14 @@
 .sticker-sheet {
   position: relative;
   width: 100%;
-  max-width: 280px;
+  max-width: 256px;
   margin: 16px auto;
   height: 200px;
+  margin-top: -128px;
 
   @include desktop {
     height: 250px;
+    margin-top: -64px;
   }
 }
 

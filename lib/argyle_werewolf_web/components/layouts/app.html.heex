@@ -1,33 +1,12 @@
 <main>
   <.flash_group flash={@flash} />
-  <div class="sidebar">
+  <div id="left">
     <div id="portrait"></div>
-
-    <h2><a href={~p"/"}>Angela Quinton</a></h2>
-
-    <.ui_controls show_mode />
-    <.sidebar_nav items={@nav_items} current_section={@current_section} />
-
-    <div class="sticker-sheet">
-      <div class="sticker one">
-        <p>Excuse the mess</p>
-        <span class="fold"></span>
-      </div>
-      <div class="sticker two">
-        <p>
-          I was laid off in late April <span>&amp;</span>
-          am updating this site to reflect my work <span>&amp;</span>
-          capabilities
-        </p>
-      </div>
-      <div class="sticker three">
-        <p>
-          <strong>Last update:</strong> 2025-05-04, 13:41 EDT
-        </p>
-      </div>
-    </div>
+    <.stickers />
   </div>
-  <div class="content">
+  <div id="right">
+    <.ui_controls show_mode />
+    <.navigation items={@nav_items} current_section={@current_section} />
     {@inner_content}
   </div>
 </main>

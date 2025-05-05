@@ -50,10 +50,10 @@ defmodule ArgyleWerewolfWeb.PageController do
   defp put_nav_items(conn, _) do
     items = [
       %{id: "home", label: gettext("Home"), link: ~p"/"},
-      %{id: "code", label: gettext("Code"), link: ~p"/"},
-      %{id: "writing", label: gettext("Writing"), link: ~p"/"},
-      %{id: "design", label: gettext("Design"), link: ~p"/"},
-      %{id: "accolades", label: gettext("Accolades"), link: ~p"/"}
+      %{id: "code", label: gettext("Code"), link: ~p"/code/"},
+      %{id: "writing", label: gettext("Writing"), link: ~p"/writing/"},
+      %{id: "design", label: gettext("Design"), link: ~p"/design/"},
+      %{id: "accolades", label: gettext("About"), link: ~p"/about/"}
     ]
 
     assign(conn, :nav_items, items)

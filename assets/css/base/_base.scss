@@ -40,12 +40,12 @@ main {
   margin: 20px;
 }
 
-.sidebar,
-.content {
+#left,
+#right {
   width: 100%;
 }
 
-.sidebar {
+#left {
   text-align: center;
   margin-bottom: 48px;
 }
@@ -57,7 +57,7 @@ main {
   opacity: 0.4;
 }
 
-.content {
+#right {
   padding-bottom: 30px;
 }
 
@@ -108,13 +108,13 @@ code {
     max-width: 960px;
   }
 
-  .sidebar {
+  #left {
     float: left;
     width: 300px;
     margin-right: 60px;
   }
 
-  .content {
+  #right {
     float: left;
     width: 600px;
   }

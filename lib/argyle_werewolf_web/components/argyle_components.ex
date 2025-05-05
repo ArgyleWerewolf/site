@@ -27,9 +27,9 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
   attr :items, :list
   attr :current_section, :string
 
-  def sidebar_nav(assigns) do
+  def navigation(assigns) do
     ~H"""
-    <nav class="hidden">
+    <nav style="display: none;">
       <ul>
         <li :for={item <- @items} class={if item.id == @current_section, do: "current"}>
           <a href={item.link}>{item.label}</a>
@@ -45,6 +45,29 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
   def back_link(assigns) do
     ~H"""
     <a href={@to} class="in-page-nav">{@text}</a>
+    """
+  end
+
+  def stickers(assigns) do
+    ~H"""
+    <div class="sticker-sheet">
+      <div class="sticker one">
+        <p>Excuse the mess</p>
+        <span class="fold"></span>
+      </div>
+      <div class="sticker two">
+        <p>
+          I was laid off in late April <span>&amp;</span>
+          am updating this site to reflect my work <span>&amp;</span>
+          capabilities
+        </p>
+      </div>
+      <div class="sticker three">
+        <p>
+          <strong>Last update:</strong> 2025-05-04, 13:41 EDT
+        </p>
+      </div>
+    </div>
     """
   end
 end
