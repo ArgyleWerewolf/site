@@ -50,32 +50,34 @@ $themes: (
       shadow-color: rgba(midnightblue, 0.7),
     ),
   ),
-  assert: (
-    light: (
-      bg-color: midnightblue,
-      text-color-primary: greenyellow,
-      text-color-secondary: greenyellow,
-      link-color: rebeccapurple,
-      link-visited-color: violet,
-      font-family-primary: #{"Roboto Mono",
-      monospace},
-      font-family-secondary: #{"Helvetica Neue",
-      Helvetica,
-      Arial},
+  // ah, i see you've found the alternate theme that isn't fully implemented yet!
+  assert:
+    (
+      light: (
+        bg-color: midnightblue,
+        text-color-primary: greenyellow,
+        text-color-secondary: greenyellow,
+        link-color: rebeccapurple,
+        link-visited-color: violet,
+        font-family-primary: #{"Roboto Mono",
+        monospace},
+        font-family-secondary: #{"Helvetica Neue",
+        Helvetica,
+        Arial},
+      ),
+      dark: (
+        bg-color: greenyellow,
+        text-color-primary: midnightblue,
+        text-color-secondary: midnightblue,
+        link-color: rebeccapurple,
+        link-visited-color: violet,
+        font-family-primary: #{"Roboto Mono",
+        monospace},
+        font-family-secondary: #{"Helvetica Neue",
+        Helvetica,
+        Arial},
+      ),
     ),
-    dark: (
-      bg-color: greenyellow,
-      text-color-primary: midnightblue,
-      text-color-secondary: midnightblue,
-      link-color: rebeccapurple,
-      link-visited-color: violet,
-      font-family-primary: #{"Roboto Mono",
-      monospace},
-      font-family-secondary: #{"Helvetica Neue",
-      Helvetica,
-      Arial},
-    ),
-  ),
 );
 
 $breakpoint-desktop: 1024px;
