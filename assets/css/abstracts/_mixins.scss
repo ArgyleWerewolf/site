@@ -10,8 +10,7 @@
 }
 
 @mixin apply-theme($theme-name) {
-  @if $theme-name =="default" {
-
+  @if $theme-name == "default" {
     :root,
     :root[data-theme="#{$theme-name}"] {
       @include theme($theme-name, light);
@@ -20,9 +19,7 @@
         @include theme($theme-name, dark);
       }
     }
-  }
-
-  @else {
+  } @else {
     :root[data-theme="#{$theme-name}"] {
       @include theme($theme-name, light);
 

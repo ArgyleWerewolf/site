@@ -28,7 +28,12 @@
     width: 140px;
     height: 140px;
     background: coral;
-    background: -webkit-linear-gradient(-135deg, transparent 45px, coral 0, crimson);
+    background: -webkit-linear-gradient(
+      -135deg,
+      transparent 45px,
+      coral 0,
+      crimson
+    );
     box-shadow: -2px 2px 2px var(--shadow-color);
 
     p {
@@ -116,6 +121,11 @@
     top: -96px;
     right: -96px;
     border-radius: 100%;
-    background: -webkit-linear-gradient(-135deg, transparent 180px, #cab567 160px, #feeba7 85%);
+    background: -webkit-linear-gradient(
+      -135deg,
+      transparent 180px,
+      #cab567 160px,
+      #feeba7 85%
+    );
   }
 }

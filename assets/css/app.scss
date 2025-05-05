@@ -1,25 +1,25 @@
 /* No Tailwind for this, thanks. */
 
 // Abstracts
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@import "abstracts/variables";
+@import "abstracts/mixins";
 
 // Base
-@import 'base/typography';
-@import 'base/base';
+@import "base/typography";
+@import "base/base";
 
 // Layout
-@import 'layout/navigation';
+@import "layout/navigation";
 
 // Components
-@import 'components/portrait';
-@import 'components/sticker';
-@import 'components/sprites';
-@import 'components/theme-switcher';
+@import "components/portrait";
+@import "components/sticker";
+@import "components/sprites";
+@import "components/theme-switcher";
 
 // Pages
-@import 'pages/home';
+@import "pages/home";
 
 // Themes
-@import 'themes/default';
-@import 'themes/assert';
+@import "themes/default";
+@import "themes/assert";
