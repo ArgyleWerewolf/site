@@ -7,6 +7,7 @@ defmodule ArgyleWerewolf.MixProject do
       version: "0.1.0",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
+      preferred_cli_env: [check: :test],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -48,7 +49,8 @@ defmodule ArgyleWerewolf.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:bandit, "~> 1.5"},
       {:phoenix_svg_sprites, git: "https://github.com/ArgyleWerewolf/phx-svg-sprites.git"},
-      {:dart_sass, "~> 0.7", runtime: Mix.env() == :dev}
+      {:dart_sass, "~> 0.7", runtime: Mix.env() == :dev},
+      {:credo, "~> 1.7", only: [:dev, :test], runtime: false}
     ]
   end
 
@@ -72,6 +74,11 @@ defmodule ArgyleWerewolf.MixProject do
         "sass default --no-source-map --style=compressed",
         "phoenix_svg_sprites",
         "phx.digest"
+      ],
+      check: [
+        "format",
+        "credo",
+        "test"
       ]
     ]
   end
