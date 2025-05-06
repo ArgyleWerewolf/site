@@ -95,9 +95,16 @@
     border: 4px solid orange;
     padding: 10px;
     box-shadow: -2px 2px 2px var(--shadow-color);
+    text-decoration: none;
+    transform: rotate(8deg);
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+    &:hover {
+      transform: scale(1.1);
+      border: 4px solid white;
+    }
 
     p {
-      transform: rotate(8deg);
       color: darkslategrey;
       font-weight: 400;
       font-size: 12px;
