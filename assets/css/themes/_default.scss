@@ -3,6 +3,12 @@
 :root,
 :root[data-theme="default"] {
   text-transform: lowercase;
+  nav {
+    line-height: 1.2;
+    h2 {
+      color: var(--title-color);
+    }
+  }
 
   main::before {
     width: 4px;

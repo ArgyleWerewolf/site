@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="csrf-token" content={get_csrf_token()} />
-    <.live_title default="Argyle Werewolf" suffix=" | argyle werewolf">
+    <.live_title default="Argyle Werewolf" suffix=" | Angela Quinton">
       {assigns[:page_title]}
     </.live_title>
     <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
@@ -15,7 +15,7 @@
     <link rel="preload" href={~p"/images/portrait-2.png"} as="image" />
     <link rel="preload" href={~p"/images/portrait-3.png"} as="image" />
   </head>
-  <body class={"#{@current_section}"}>
+  <body class={"page-#{@current_section}"}>
     {@inner_content}
   </body>
 </html>

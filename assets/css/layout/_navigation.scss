@@ -1,26 +1,44 @@
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 12px 0;
-  text-align: center;
+nav {
   line-height: 1.4;
-
-  li {
+  h2 {
+    font-size: 36px;
     margin: 0;
-    display: inline-block;
-    font-size: 21px;
-    margin: 0 12px;
-    text-transform: lowercase;
+  }
 
-    &.current a {
-      color: var(--accent-color);
-      text-decoration: none;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+
+    li {
+      margin: 0;
+      display: inline-block;
+      font-size: 21px;
+      margin: 0 12px;
+      text-transform: lowercase;
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &.current a {
+        color: var(--accent-color);
+        text-decoration: none;
+      }
+    }
+
+    @include desktop {
+      margin: 0 0 56px;
     }
   }
 }
 
 .in-page-nav {
   display: inline-block;
-  margin-top: 20px;
-  font-size: 20px;
+  margin-top: 24px;
+  font-size: 24px;
+}
+
+a[href="#up"].in-page-nav {
+  float: right;
+  text-decoration: none;
 }
