@@ -4,19 +4,19 @@ defmodule ArgyleWerewolfWeb.PageController do
   plug :put_nav_items
 
   def home(conn, _params) do
-    render(conn |> assign(:page_title, "Angela Quinton"), :home)
+    render(conn |> assign(:page_title, "Angela Quinton") |> assign(:back_link, nil), :home)
   end
 
   def code(conn, _params) do
-    render(conn |> assign(:page_title, "Code"), :code)
+    render(conn |> assign(:page_title, "Code") |> assign(:back_link, ~p"/"), :code)
   end
 
   def sprites(conn, _params) do
-    render(conn |> assign(:page_title, "Sprites"), :sprites)
+    render(conn |> assign(:page_title, "Sprites") |> assign(:back_link, ~p"/"), :sprites)
   end
 
   def writing(conn, _params) do
-    render(conn |> assign(:page_title, "Writing"), :writing)
+    render(conn |> assign(:page_title, "Writing") |> assign(:back_link, ~p"/"), :writing)
   end
 
   def ltq(conn, _params) do
@@ -25,17 +25,18 @@ defmodule ArgyleWerewolfWeb.PageController do
       |> assign(
         :page_title,
         "Symbolism of Lycanthropy In Horror Media - Angela Quinton answers questions from Miranda Lascelles"
-      ),
+      )
+      |> assign(:back_link, ~p"/"),
       :ltq
     )
   end
 
   def design(conn, _params) do
-    render(conn |> assign(:page_title, "Design"), :design)
+    render(conn |> assign(:page_title, "Design") |> assign(:back_link, ~p"/"), :design)
   end
 
   def about(conn, _params) do
-    render(conn |> assign(:page_title, "About"), :about)
+    render(conn |> assign(:page_title, "About") |> assign(:back_link, ~p"/"), :about)
   end
 
   defp put_current_section(conn, _) do

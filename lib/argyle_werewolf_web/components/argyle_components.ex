@@ -29,7 +29,8 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
 
   def navigation(assigns) do
     ~H"""
-    <nav style="display: none;">
+    <nav id="up">
+      <h2>Angela Quinton</h2>
       <ul>
         <li :for={item <- @items} class={if item.id == @current_section, do: "current"}>
           <a href={item.link}>{item.label}</a>
@@ -39,12 +40,25 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
     """
   end
 
+  attr :current_section, :string
+  attr :back_link, :string
+
+  def colophon(assigns) do
+    ~H"""
+    <div id="colophon">
+      <.back_link :if={@back_link} to={@back_link} />
+      <.back_link to="#up" text="↑" label={gettext("Back to the top")} />
+    </div>
+    """
+  end
+
   attr :to, :string, default: "/"
-  attr :text, :string, default: "← back"
+  attr :text, :string, default: "← Back"
+  attr :label, :string, default: nil
 
   def back_link(assigns) do
     ~H"""
-    <a href={@to} class="in-page-nav">{@text}</a>
+    <a href={@to} aria-label={@label} class="in-page-nav">{@text}</a>
     """
   end
 
