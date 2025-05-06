@@ -76,11 +76,11 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
           capabilities
         </p>
       </div>
-      <div class="sticker three">
+      <a href="https://github.com/ArgyleWerewolf/site/commits/main/" class="sticker three">
         <p>
-          <strong>Last update:</strong> 2025-05-06, 12:16 EDT
+          <strong>Last update:</strong> 2025-05-06, 12:35 EDT
         </p>
-      </div>
+      </a>
     </div>
     """
   end
