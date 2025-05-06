@@ -31,7 +31,7 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
     ~H"""
     <nav id="up">
       <h2>Angela Quinton</h2>
-      <ul>
+      <ul class="hidden">
         <li :for={item <- @items} class={if item.id == @current_section, do: "current"}>
           <a href={item.link}>{item.label}</a>
         </li>
@@ -78,7 +78,7 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
       </div>
       <div class="sticker three">
         <p>
-          <strong>Last update:</strong> 2025-05-04, 13:41 EDT
+          <strong>Last update:</strong> 2025-05-06, 12:16 EDT
         </p>
       </div>
     </div>
