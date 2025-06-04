@@ -78,7 +78,7 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
       </div>
       <a href="https://github.com/ArgyleWerewolf/site/commits/main/" class="sticker three">
         <p>
-          <strong>Last update:</strong> 2025-05-06, 12:35 EDT
+          <strong>Last update:</strong> 2025-06-04, 14:56 EDT
         </p>
       </a>
     </div>

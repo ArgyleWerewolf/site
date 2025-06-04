@@ -5,6 +5,7 @@ $dim: 32px;
   top: $dim;
   right: $dim;
   display: flow-root;
+  z-index: 2;
 
   .themes {
     float: left;
