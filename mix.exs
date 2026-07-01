@@ -5,7 +5,7 @@ defmodule ArgyleWerewolf.MixProject do
     [
       app: :argyle_werewolf,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.18",
       elixirc_paths: elixirc_paths(Mix.env()),
       preferred_cli_env: [check: :test],
       start_permanent: Mix.env() == :prod,
@@ -41,7 +41,7 @@ defmodule ArgyleWerewolf.MixProject do
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.5"},
-      {:finch, "~> 0.13"},
+      {:finch, "~> 0.19"},
       {:telemetry_metrics, "~> 1.0"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.26"},
