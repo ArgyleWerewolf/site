@@ -5,7 +5,7 @@ defmodule ArgyleWerewolf.MixProject do
     [
       app: :argyle_werewolf,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.18",
       elixirc_paths: elixirc_paths(Mix.env()),
       preferred_cli_env: [check: :test],
       start_permanent: Mix.env() == :prod,
