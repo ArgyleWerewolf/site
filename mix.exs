@@ -41,7 +41,7 @@ defmodule ArgyleWerewolf.MixProject do
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.5"},
-      {:finch, "~> 0.13"},
+      {:finch, "~> 0.19"},
       {:telemetry_metrics, "~> 1.0"},
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.26"},
