@@ -71,12 +71,12 @@ defmodule ArgyleWerewolfWeb.ArgyleComponents do
       </div>
       <div class="sticker two">
         <p>
-          i am still updating this site to reflect my work <span>&amp;</span> capabilities
+          i am updating this site to reflect my work <span>&amp;</span> capabilities
         </p>
       </div>
       <a href="https://github.com/ArgyleWerewolf/site/commits/main/" class="sticker three">
         <p>
-          <strong>Last update:</strong> 2025-07-23, 22:18 EDT
+          <strong>Last update:</strong> 2026-07-01, 12:48 EDT
         </p>
       </a>
     </div>
